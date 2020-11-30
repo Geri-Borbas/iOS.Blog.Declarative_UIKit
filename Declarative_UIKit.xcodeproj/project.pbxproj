@@ -19,6 +19,8 @@
 		55B9EB9B2572FBC90050C887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9EB992572FBC90050C887 /* LaunchScreen.storyboard */; };
 		55B9EBA42572FC030050C887 /* NSObject+Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EBA32572FC030050C887 /* NSObject+Withable.swift */; };
 		55B9EBB0257301410050C887 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EBAF257301410050C887 /* RootViewController.swift */; };
+		55D5D603257485F200FC5202 /* HelloWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5D602257485F200FC5202 /* HelloWorldViewController.swift */; };
+		55D5D607257497FA00FC5202 /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5D606257497FA00FC5202 /* ExamplesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		55B9EB9C2572FBC90050C887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B9EBA32572FC030050C887 /* NSObject+Withable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Withable.swift"; sourceTree = "<group>"; };
 		55B9EBAF257301410050C887 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		55D5D602257485F200FC5202 /* HelloWorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldViewController.swift; sourceTree = "<group>"; };
+		55D5D606257497FA00FC5202 /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		558DC0192574433000A7298F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55D5D602257485F200FC5202 /* HelloWorldViewController.swift */,
+				55D5D606257497FA00FC5202 /* ExamplesViewController.swift */,
 				558DC014257440CB00A7298F /* ImperativeViewController.swift */,
 				55B9EBAF257301410050C887 /* RootViewController.swift */,
 				558DC023257446FC00A7298F /* DeclerativeViewController.swift */,
@@ -179,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */,
+				55D5D607257497FA00FC5202 /* ExamplesViewController.swift in Sources */,
 				558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */,
 				558DC0202574463D00A7298F /* Data.swift in Sources */,
 				558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */,
@@ -188,6 +195,7 @@
 				55B9EBB0257301410050C887 /* RootViewController.swift in Sources */,
 				55B9EB912572FBC30050C887 /* SceneDelegate.swift in Sources */,
 				558DC024257446FC00A7298F /* DeclerativeViewController.swift in Sources */,
+				55D5D603257485F200FC5202 /* HelloWorldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,9 @@ protocol Withable {
 	
 	associatedtype T
 	
-	/// Provides a closure with the instance called immediately, then returns the instance.
-	/// - Parameter closure: The closure with the instance.
+	/// Provides a closure to configure instances inline.
+	/// - Parameter closure: A closure `self` as the argument.
+	/// - Returns: Simply returns the instance after called the `closure`.
 	@discardableResult func with(_ closure: (_ instance: T) -> Void) -> T
 }
 
