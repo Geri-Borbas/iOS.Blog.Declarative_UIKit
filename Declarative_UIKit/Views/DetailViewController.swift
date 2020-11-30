@@ -1,5 +1,5 @@
 //
-//  EmbeddedStackViewsViewController.swift
+//  DetailViewController.swift
 //  Declarative_UIKit
 //
 //  Created by Geri Borbás on 30/11/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmbeddedStackViewsViewController: UIViewController {
+class DetailViewController: UIViewController {
 	
 	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
 		UILabel()
@@ -136,9 +136,9 @@ extension UIView {
 
 import SwiftUI
 
-struct EmbeddedStackViewsViewController_Previews: PreviewProvider {
+struct DetailViewController_Previews: PreviewProvider {
     static var previews: some View {
-		PreviewView(for: EmbeddedStackViewsViewController())
+		PreviewView(for: DetailViewController())
 			.environment(\.colorScheme, .dark)
 			.edgesIgnoringSafeArea(.all)
     }
