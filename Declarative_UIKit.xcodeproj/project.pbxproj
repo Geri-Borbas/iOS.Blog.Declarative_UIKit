@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553A7E4125750AC900310094 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A7E4025750AC900310094 /* PreviewView.swift */; };
 		554A94EB2574508400F2CFE6 /* EmbeddedStackViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A94EA2574508400F2CFE6 /* EmbeddedStackViewsViewController.swift */; };
 		558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC014257440CB00A7298F /* ImperativeViewController.swift */; };
 		558DC0202574463D00A7298F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC01F2574463D00A7298F /* Data.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553A7E4025750AC900310094 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		554A94EA2574508400F2CFE6 /* EmbeddedStackViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedStackViewsViewController.swift; sourceTree = "<group>"; };
 		558DC014257440CB00A7298F /* ImperativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperativeViewController.swift; sourceTree = "<group>"; };
 		558DC01F2574463D00A7298F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				55B9EBA32572FC030050C887 /* NSObject+Withable.swift */,
 				558DC0262574474000A7298F /* UIStackView+Extensions.swift */,
 				558DC0292574475000A7298F /* UIView+Extensions.swift */,
+				553A7E4025750AC900310094 /* PreviewView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */,
 				554A94EB2574508400F2CFE6 /* EmbeddedStackViewsViewController.swift in Sources */,
 				55B9EBA42572FC030050C887 /* NSObject+Withable.swift in Sources */,
+				553A7E4125750AC900310094 /* PreviewView.swift in Sources */,
 				55B9EBB0257301410050C887 /* RootViewController.swift in Sources */,
 				55B9EB912572FBC30050C887 /* SceneDelegate.swift in Sources */,
 				558DC024257446FC00A7298F /* DeclerativeViewController.swift in Sources */,

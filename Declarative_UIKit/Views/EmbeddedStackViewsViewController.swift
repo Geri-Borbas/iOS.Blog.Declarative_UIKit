@@ -2,74 +2,59 @@
 //  EmbeddedStackViewsViewController.swift
 //  Declarative_UIKit
 //
-//  Created by Geri Borbás on 29/11/2020.
+//  Created by Geri Borbás on 30/11/2020.
+//  http://www.twitter.com/Geri_Borbas
 //
 
 import UIKit
 
-
 class EmbeddedStackViewsViewController: UIViewController {
-
 	
-	// MARK: Views
-	
-	struct UI {
-		static let insets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-		static let spacing = CGFloat(10)
-	}
-	
-	private lazy var stackView = UIStackView().vertical(spacing: UI.spacing).withViews(
+	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
 		UILabel()
 			.withTitleStyle
-			.with { $0.text = Data.earth.title }
-			.inspect,
+			.with { $0.text = Data.earth.title },
 		UIStackView().vertical(spacing: 5).withViews(
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
 					.with { $0.text = "size" }
 					.withPropertyStyle
-					.boxed,
+					.withBox,
 				UILabel()
 					.with { $0.text = Data.earth.properties.size }
-					.withPropertyValueStyle
-					.inspect,
-				UIView.spacer.inspect
+					.withPropertyValueStyle,
+				UIView.spacer
 			),
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
 					.with { $0.text = "distance" }
 					.withPropertyStyle
-					.boxed,
+					.withBox,
 				UILabel()
 					.with { $0.text = Data.earth.properties.distance }
-					.withPropertyValueStyle
-					.inspect,
-				UIView.spacer.inspect
+					.withPropertyValueStyle,
+				UIView.spacer
 			),
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
 					.with { $0.text = "mass" }
 					.withPropertyStyle
-					.boxed,
+					.withBox,
 				UILabel()
 					.with { $0.text = Data.earth.properties.mass }
-					.withPropertyValueStyle
-					.inspect,
-				UIView.spacer.inspect
+					.withPropertyValueStyle,
+				UIView.spacer
 			)
 		),
 		UIImageView()
-			.with { $0.image = UIImage(named: Data.earth.imageAssetName) }
-			.inspect,
+			.with { $0.image = UIImage(named: Data.earth.imageAssetName) },
 		UILabel()
 			.withParagraphStyle
-			.with { $0.text = Data.earth.paragraphs.first }
-			.inspect,
+			.with { $0.text = Data.earth.paragraphs.first },
 		UILabel()
 			.withParagraphStyle
-			.with { $0.text = Data.earth.paragraphs.last }
-			.inspect,
-		UIView.spacer.inspect
+			.with { $0.text = Data.earth.paragraphs.last },
+		UIView.spacer
 	)
 	
 	
@@ -77,12 +62,17 @@ class EmbeddedStackViewsViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.addSubview(stackView)
-		stackView.add(insets: UI.insets, to: view.safeAreaLayoutGuide)
+		view.addSubview(body)
+		view.backgroundColor = .systemBackground
+		body.pin(
+			to: view.safeAreaLayoutGuide,
+			insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+		)
 	}
 }
 
 
+// MARK: - Styles
 
 fileprivate extension UILabel {
 	
@@ -120,10 +110,15 @@ fileprivate extension UILabel {
 
 extension UIView {
 	
-	var boxed: UIView {
-		UIView().with {
+	var withBoxStyle: UIView {
+		with {
 			$0.backgroundColor = .systemGray
 			$0.layer.cornerRadius = 5
+		}
+	}
+	
+	var withBox: UIView {
+		UIView().withBoxStyle.with {
 			$0.addSubview(self)
 			self.translatesAutoresizingMaskIntoConstraints = false
 			$0.addConstraints([
@@ -134,4 +129,17 @@ extension UIView {
 			])
 		}
 	}
+}
+
+
+// MARK: - Previews
+
+import SwiftUI
+
+struct EmbeddedStackViewsViewController_Previews: PreviewProvider {
+    static var previews: some View {
+		PreviewView(for: EmbeddedStackViewsViewController())
+			.environment(\.colorScheme, .dark)
+			.edgesIgnoringSafeArea(.all)
+    }
 }

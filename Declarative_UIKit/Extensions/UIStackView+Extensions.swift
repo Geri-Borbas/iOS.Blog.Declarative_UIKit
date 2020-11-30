@@ -11,34 +11,22 @@ import UIKit
 
 extension UIStackView {
 	
+	func horizontal(spacing: CGFloat = 0) -> UIStackView {
+		with {
+			$0.axis = .horizontal
+			$0.spacing = spacing
+		}
+	}
+	
+	func vertical(spacing: CGFloat = 0) -> UIStackView {
+		with {
+			$0.axis = .vertical
+			$0.spacing = spacing
+		}
+	}
+	
 	func views(_ views: UIView ...) {
 		views.forEach { addArrangedSubview($0) }
-	}
-	
-	var horizontal: UIStackView {
-		with {
-			$0.axis = .horizontal
-		}
-	}
-	
-	func horizontal(spacing: CGFloat) -> UIStackView {
-		with {
-			$0.axis = .horizontal
-			$0.spacing = spacing
-		}
-	}
-	
-	var vertical: UIStackView {
-		with {
-			$0.axis = .vertical
-		}
-	}
-	
-	func vertical(spacing: CGFloat) -> UIStackView {
-		with {
-			$0.axis = .vertical
-			$0.spacing = spacing
-		}
 	}
 	
 	func withViews(_ views: UIView ...) -> UIStackView {

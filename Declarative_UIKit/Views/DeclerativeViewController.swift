@@ -45,7 +45,7 @@ class DeclarativeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.addSubview(stackView)
-		stackView.add(insets: UI.insets, to: view.safeAreaLayoutGuide)
+		stackView.pin(to: view.safeAreaLayoutGuide, insets: UI.insets)
 	}
 }
 
@@ -86,7 +86,7 @@ fileprivate extension UILabel {
 
 extension UIView {
 	
-	func add(insets: UIEdgeInsets, to: UILayoutGuide)  {
+	func pin(to: UILayoutGuide, insets: UIEdgeInsets)  {
 		guard let superview = superview else {
 			return
 		}
