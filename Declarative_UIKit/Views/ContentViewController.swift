@@ -11,49 +11,45 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
-	let viewModel = ViewModel()
-	
-	// MARK: Views
+	let viewModel = Planets().earth
 	
 	lazy var stackView = UIStackView().with {
 		$0.axis = .vertical
 		$0.spacing = 10
 		[
 			UILabel().with {
-				$0.text = viewModel.earth.title
+				$0.text = viewModel.titleSo
 				$0.textColor = .label
-				$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+				$0.font = .preferredFont(forTextStyle: .largeTitle)
 			},
 			UILabel().with {
 				$0.text = """
-					size: \(viewModel.earth.properties.size)
-					distance: \(viewModel.earth.properties.distance)
-					mass: \(viewModel.earth.properties.mass)
+					size: \(viewModel.properties.size)
+					distance: \(viewModel.properties.distance)
+					mass: \(viewModel.properties.mass)
 					"""
 				$0.textColor = .systemGray
 				$0.numberOfLines = 0
-				$0.font = UIFont.preferredFont(forTextStyle: .headline)
+				$0.font = .preferredFont(forTextStyle: .headline)
 			},
 			UIImageView().with {
-				$0.image = UIImage(named: viewModel.earth.imageAssetName)
+				$0.image = UIImage(named: viewModel.imageAssetName)
 			},
 			UILabel().with {
-				$0.text = viewModel.earth.paragraphs.first
+				$0.text = viewModel.paragraphs.first
 				$0.textColor = .label
 				$0.numberOfLines = 0
-				$0.font = UIFont.preferredFont(forTextStyle: .footnote)
+				$0.font = .preferredFont(forTextStyle: .footnote)
 			},
 			UILabel().with {
-				$0.text = viewModel.earth.paragraphs.last
+				$0.text = viewModel.paragraphs.last
 				$0.textColor = .label
 				$0.numberOfLines = 0
-				$0.font = UIFont.preferredFont(forTextStyle: .footnote)
+				$0.font = .preferredFont(forTextStyle: .footnote)
 			},
 			UIView()
 		].add(to: $0)
 	}
-	
-	// MARK: Initialization
 	
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,13 +9,11 @@ import UIKit
 
 
 class ExamplesViewController: UIViewController {
-		
-	// MARK: Views
 	
 	private let label = UILabel().with {
 		$0.text = "Hello World!"
 		$0.textColor = .label
-		$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+		$0.font = .preferredFont(forTextStyle: .largeTitle)
 	}
 	
 	private lazy var submitButton = UIButton().with {
@@ -31,8 +29,6 @@ class ExamplesViewController: UIViewController {
 		$0.preferredFramesPerSecond = 120
 		$0.add(to: RunLoop.main, forMode: .common)
 	}
-	
-	// MARK: Initialization
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

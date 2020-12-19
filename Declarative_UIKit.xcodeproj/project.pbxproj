@@ -10,7 +10,7 @@
 		553A7E4125750AC900310094 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A7E4025750AC900310094 /* PreviewView.swift */; };
 		554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */; };
 		558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC014257440CB00A7298F /* ImperativeViewController.swift */; };
-		558DC0202574463D00A7298F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC01F2574463D00A7298F /* ViewModel.swift */; };
+		558DC0202574463D00A7298F /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC01F2574463D00A7298F /* Planets.swift */; };
 		558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0262574474000A7298F /* UIStackView+Extensions.swift */; };
 		558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0292574475000A7298F /* UIView+Extensions.swift */; };
 		55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EB8E2572FBC30050C887 /* AppDelegate.swift */; };
@@ -27,7 +27,7 @@
 		553A7E4025750AC900310094 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController_2.swift; sourceTree = "<group>"; };
 		558DC014257440CB00A7298F /* ImperativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperativeViewController.swift; sourceTree = "<group>"; };
-		558DC01F2574463D00A7298F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		558DC01F2574463D00A7298F /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		558DC0262574474000A7298F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		558DC0292574475000A7298F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		55B9EB8B2572FBC30050C887 /* Declarative_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Declarative_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +56,7 @@
 		5571D6332574699D00727C89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				558DC01F2574463D00A7298F /* ViewModel.swift */,
+				558DC01F2574463D00A7298F /* Planets.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */,
 				55D5D607257497FA00FC5202 /* ExamplesViewController.swift in Sources */,
 				558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */,
-				558DC0202574463D00A7298F /* ViewModel.swift in Sources */,
+				558DC0202574463D00A7298F /* Planets.swift in Sources */,
 				558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */,
 				55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */,
 				554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */,

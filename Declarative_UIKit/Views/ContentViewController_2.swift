@@ -10,11 +10,11 @@ import UIKit
 
 class ContentViewController_2: UIViewController {
 	
-	let viewModel = ViewModel()
+	let viewModel = Planets().earth
 	
 	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
 		UILabel()
-			.with(text: viewModel.earth.title)
+			.with(text: viewModel.title)
 			.withTitleStyle,
 		UIStackView().vertical(spacing: 5).withViews(
 			UIStackView().horizontal(spacing: 5).withViews(
@@ -23,7 +23,7 @@ class ContentViewController_2: UIViewController {
 					.withPropertyStyle  
 					.withBox,
 				UILabel()
-					.with(text: viewModel.earth.properties.size)
+					.with(text: viewModel.properties.size)
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
@@ -33,7 +33,7 @@ class ContentViewController_2: UIViewController {
 					.withPropertyStyle
 					.withBox,
 				UILabel()
-					.with(text: viewModel.earth.properties.distance)
+					.with(text: viewModel.properties.distance)
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
@@ -43,18 +43,18 @@ class ContentViewController_2: UIViewController {
 					.withPropertyStyle
 					.withBox,
 				UILabel()
-					.with(text: viewModel.earth.properties.mass)
+					.with(text: viewModel.properties.mass)
 					.withPropertyValueStyle,
 				UIView.spacer
 			)
 		),
 		UIImageView()
-			.with { $0.image = UIImage(named: viewModel.earth.imageAssetName) },
+			.with { $0.image = UIImage(named: viewModel.imageAssetName) },
 		UILabel()
-			.with(text: viewModel.earth.paragraphs.first)
+			.with(text: viewModel.paragraphs.first)
 			.withParagraphStyle,
 		UILabel()
-			.with(text: viewModel.earth.paragraphs.last)
+			.with(text: viewModel.paragraphs.last)
 			.withParagraphStyle,
 		UIView.spacer
 	)
@@ -81,14 +81,14 @@ fileprivate extension UILabel {
 	var withTitleStyle: UILabel {
 		with {
 			$0.textColor = .label
-			$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+			$0.font = .preferredFont(forTextStyle: .largeTitle)
 		}
 	}
 	
 	var withPropertyStyle: UILabel {
 		with {
 			$0.textColor = .systemBackground
-			$0.font = UIFont.preferredFont(forTextStyle: .headline)
+			$0.font = .preferredFont(forTextStyle: .headline)
 			$0.setContentCompressionResistancePriority(.required, for: .vertical)
 		}
 	}
@@ -96,7 +96,7 @@ fileprivate extension UILabel {
 	var withPropertyValueStyle: UILabel {
 		with {
 			$0.textColor = .systemGray
-			$0.font = UIFont.preferredFont(forTextStyle: .body)
+			$0.font = .preferredFont(forTextStyle: .body)
 		}
 	}
 	
@@ -104,7 +104,7 @@ fileprivate extension UILabel {
 		with {
 			$0.textColor = .label
 			$0.numberOfLines = 0
-			$0.font = UIFont.preferredFont(forTextStyle: .footnote)
+			$0.font = .preferredFont(forTextStyle: .footnote)
 		}
 	}
 }

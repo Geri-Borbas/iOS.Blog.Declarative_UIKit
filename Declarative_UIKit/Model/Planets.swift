@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct ViewModel {
+struct Planets {
 	
 	let earth = (
 		title: "Earth",

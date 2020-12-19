@@ -10,12 +10,8 @@ import UIKit
 
 
 class ImperativeViewController: UIViewController {
-
-	// MARK: Properties
 	
-	let viewModel = ViewModel()
-	
-	// MARK: Views
+	let viewModel = Planets().earth
 	
 	private let titleLabel = UILabel()
 	private let propertiesLabel = UILabel()
@@ -23,38 +19,35 @@ class ImperativeViewController: UIViewController {
 	private let firstParagraphLabel = UILabel()
 	private let lastParagraphLabel = UILabel()
 	
-	
-	// MARK: Initialization
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .systemBackground
 		
-		// Setup.
-		titleLabel.text = viewModel.earth.title
+		// Configure.
+		titleLabel.text = viewModel.title
 		titleLabel.textColor = .label
-		titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+		titleLabel.font = .preferredFont(forTextStyle: .largeTitle)
 		
 		propertiesLabel.text = """
-			size: \(viewModel.earth.properties.size)
-			distance: \(viewModel.earth.properties.distance)
-			mass: \(viewModel.earth.properties.mass)
+			size: \(viewModel.properties.size)
+			distance: \(viewModel.properties.distance)
+			mass: \(viewModel.properties.mass)
 			"""
 		propertiesLabel.textColor = .systemGray
 		propertiesLabel.numberOfLines = 0
-		propertiesLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+		propertiesLabel.font = .preferredFont(forTextStyle: .headline)
 		
-		imageView.image = UIImage(named: viewModel.earth.imageAssetName)
+		imageView.image = UIImage(named: viewModel.imageAssetName)
 		
-		firstParagraphLabel.text = viewModel.earth.paragraphs.first
+		firstParagraphLabel.text = viewModel.paragraphs.first
 		firstParagraphLabel.textColor = .label
 		firstParagraphLabel.numberOfLines = 0
-		firstParagraphLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+		firstParagraphLabel.font = .preferredFont(forTextStyle: .footnote)
 		
-		lastParagraphLabel.text = viewModel.earth.paragraphs.last
+		lastParagraphLabel.text = viewModel.paragraphs.last
 		lastParagraphLabel.textColor = .label
 		lastParagraphLabel.numberOfLines = 0
-		lastParagraphLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+		lastParagraphLabel.font = .preferredFont(forTextStyle: .footnote)
 				
 		// Red lines.
 		titleLabel.addRedLines()

@@ -13,7 +13,7 @@ class TitleLabelViewController: UIViewController {
 	
 	// MARK: Properties
 	
-	let viewModel = ViewModel()
+	let viewModel = Planets()
 	
 	// MARK: Initialization and Views
 	
@@ -23,7 +23,7 @@ class TitleLabelViewController: UIViewController {
 		let titleLabel = UILabel()
 		titleLabel.text = viewModel.earth.title
 		titleLabel.textColor = .label
-		titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+		titleLabel.font = .preferredFont(forTextStyle: .largeTitle)
 		
 		view.addSubview(titleLabel)
 		
@@ -39,7 +39,7 @@ class TitleLabelViewController_2: UIViewController {
 	
 	// MARK: Properties
 	
-	let viewModel = ViewModel()
+	let viewModel = Planets()
 	
 	// MARK: Views
 	
@@ -47,7 +47,7 @@ class TitleLabelViewController_2: UIViewController {
 		let label = UILabel()
 		label.text = viewModel.earth.title
 		label.textColor = .label
-		label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+		label.font = .preferredFont(forTextStyle: .largeTitle)
 		return label
 	}()
 	
@@ -67,16 +67,12 @@ class TitleLabelViewController_2: UIViewController {
 
 class TitleLabelViewController_3: UIViewController {
 	
-	// MARK: Properties
-	
-	let viewModel = ViewModel()
-	
-	// MARK: Views
+	let viewModel = Planets().earth
 	
 	lazy var titleLabel = UILabel().with {
-		$0.text = "Hello World!"
+		$0.text = viewModel.title
 		$0.textColor = .label
-		$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+		$0.font = .preferredFont(forTextStyle: .largeTitle)
 	}
 	
 	// MARK: Initialization
