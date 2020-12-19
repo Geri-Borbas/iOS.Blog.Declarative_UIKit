@@ -13,7 +13,9 @@ class ContentViewController: UIViewController {
 
 	let viewModel = ViewModel()
 	
-	private lazy var stackView = UIStackView().with {
+	// MARK: Views
+	
+	lazy var stackView = UIStackView().with {
 		$0.axis = .vertical
 		$0.spacing = 10
 		[
@@ -21,9 +23,6 @@ class ContentViewController: UIViewController {
 				$0.text = viewModel.earth.title
 				$0.textColor = .label
 				$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-			},
-			UIImageView().with {
-				$0.image = UIImage(named: viewModel.earth.imageAssetName)
 			},
 			UILabel().with {
 				$0.text = """
@@ -34,6 +33,9 @@ class ContentViewController: UIViewController {
 				$0.textColor = .systemGray
 				$0.numberOfLines = 0
 				$0.font = UIFont.preferredFont(forTextStyle: .headline)
+			},
+			UIImageView().with {
+				$0.image = UIImage(named: viewModel.earth.imageAssetName)
 			},
 			UILabel().with {
 				$0.text = viewModel.earth.paragraphs.first
@@ -77,7 +79,6 @@ fileprivate extension UIView {
 		backgroundColor = UIColor.red.withAlphaComponent(0.1)
 	}
 }
-
 
 
 fileprivate extension Array where Element: UIView {
