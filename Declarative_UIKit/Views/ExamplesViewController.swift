@@ -48,7 +48,7 @@ class ExamplesViewController: UIViewController {
 	}
 	
 	@objc func didTapSubmitButton() {
-		present(HelloWorldViewController().with {
+		present(TitleLabelViewController().with {
 			$0.modalTransitionStyle = .crossDissolve
 			$0.modalPresentationStyle = .overCurrentContext
 		}, animated: true)

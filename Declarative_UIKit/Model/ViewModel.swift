@@ -9,9 +9,9 @@
 import Foundation
 
 
-struct Data {
+struct ViewModel {
 	
-	static let earth = (
+	let earth = (
 		title: "Earth",
 		properties: (
 			size: "6,378 km",

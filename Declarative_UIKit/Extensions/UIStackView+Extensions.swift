@@ -25,10 +25,6 @@ extension UIStackView {
 		}
 	}
 	
-	func views(_ views: UIView ...) {
-		views.forEach { addArrangedSubview($0) }
-	}
-	
 	func withViews(_ views: UIView ...) -> UIStackView {
 		views.forEach { self.addArrangedSubview($0) }
 		return self

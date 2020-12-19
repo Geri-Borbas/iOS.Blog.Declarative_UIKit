@@ -11,6 +11,9 @@ import UIKit
 
 class ImperativeViewController: UIViewController {
 
+	// MARK: Properties
+	
+	let viewModel = ViewModel()
 	
 	// MARK: Views
 	
@@ -25,29 +28,30 @@ class ImperativeViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		view.backgroundColor = .systemBackground
 		
 		// Setup.
-		titleLabel.text = Data.earth.title
+		titleLabel.text = viewModel.earth.title
 		titleLabel.textColor = .label
 		titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
 		
 		propertiesLabel.text = """
-			size: \(Data.earth.properties.size)
-			distance: \(Data.earth.properties.distance)
-			mass: \(Data.earth.properties.mass)
+			size: \(viewModel.earth.properties.size)
+			distance: \(viewModel.earth.properties.distance)
+			mass: \(viewModel.earth.properties.mass)
 			"""
 		propertiesLabel.textColor = .systemGray
 		propertiesLabel.numberOfLines = 0
 		propertiesLabel.font = UIFont.preferredFont(forTextStyle: .headline)
 		
-		imageView.image = UIImage(named: Data.earth.imageAssetName)
+		imageView.image = UIImage(named: viewModel.earth.imageAssetName)
 		
-		firstParagraphLabel.text = Data.earth.paragraphs.first
+		firstParagraphLabel.text = viewModel.earth.paragraphs.first
 		firstParagraphLabel.textColor = .label
 		firstParagraphLabel.numberOfLines = 0
 		firstParagraphLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
 		
-		lastParagraphLabel.text = Data.earth.paragraphs.last
+		lastParagraphLabel.text = viewModel.earth.paragraphs.last
 		lastParagraphLabel.textColor = .label
 		lastParagraphLabel.numberOfLines = 0
 		lastParagraphLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
@@ -107,5 +111,18 @@ fileprivate extension UIView {
 		layer.cornerRadius = 2
 		layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
 		backgroundColor = UIColor.red.withAlphaComponent(0.1)
+	}
+}
+
+
+// MARK: - Previews
+
+import SwiftUI
+
+struct ImperativeViewController_Previews: PreviewProvider {
+	static var previews: some View {
+		PreviewView(for: ImperativeViewController())
+			.environment(\.colorScheme, .dark)
+			.edgesIgnoringSafeArea(.all)
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  ContentViewController.swift
 //  Declarative_UIKit
 //
 //  Created by Geri Borbás on 30/11/2020.
@@ -8,52 +8,54 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ContentViewController: UIViewController {
+	
+	let viewModel = ViewModel()
 	
 	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
 		UILabel()
-			.withTitleStyle
-			.with { $0.text = Data.earth.title },
+			.with(text: viewModel.earth.title)
+			.withTitleStyle,
 		UIStackView().vertical(spacing: 5).withViews(
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
-					.with { $0.text = "size" }
-					.withPropertyStyle
+					.with(text: "size")
+					.withPropertyStyle  
 					.withBox,
 				UILabel()
-					.with { $0.text = Data.earth.properties.size }
+					.with(text: viewModel.earth.properties.size)
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
-					.with { $0.text = "distance" }
+					.with(text: "distance")
 					.withPropertyStyle
 					.withBox,
 				UILabel()
-					.with { $0.text = Data.earth.properties.distance }
+					.with(text: viewModel.earth.properties.distance)
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
 			UIStackView().horizontal(spacing: 5).withViews(
 				UILabel()
-					.with { $0.text = "mass" }
+					.with(text: "mass")
 					.withPropertyStyle
 					.withBox,
 				UILabel()
-					.with { $0.text = Data.earth.properties.mass }
+					.with(text: viewModel.earth.properties.mass)
 					.withPropertyValueStyle,
 				UIView.spacer
 			)
 		),
 		UIImageView()
-			.with { $0.image = UIImage(named: Data.earth.imageAssetName) },
+			.with { $0.image = UIImage(named: viewModel.earth.imageAssetName) },
 		UILabel()
-			.withParagraphStyle
-			.with { $0.text = Data.earth.paragraphs.first },
+			.with(text: viewModel.earth.paragraphs.first)
+			.withParagraphStyle,
 		UILabel()
-			.withParagraphStyle
-			.with { $0.text = Data.earth.paragraphs.last },
+			.with(text: viewModel.earth.paragraphs.last)
+			.withParagraphStyle,
 		UIView.spacer
 	)
 	
@@ -107,6 +109,14 @@ fileprivate extension UILabel {
 	}
 }
 
+extension UILabel {
+	
+	func with(text: String?) -> UILabel {
+		with {
+			$0.text = text
+		}
+	}
+}
 
 extension UIView {
 	
@@ -129,6 +139,22 @@ extension UIView {
 			])
 		}
 	}
+	
+	func pin(to: UILayoutGuide, insets: UIEdgeInsets)  {
+		guard let superview = superview else {
+			return
+		}
+		
+		with {
+			$0.translatesAutoresizingMaskIntoConstraints = false
+			superview.addConstraints([
+				$0.topAnchor.constraint(equalTo: to.topAnchor, constant: insets.top),
+				$0.bottomAnchor.constraint(equalTo: to.bottomAnchor, constant: -insets.bottom),
+				$0.leftAnchor.constraint(equalTo: to.leftAnchor, constant: insets.left),
+				$0.rightAnchor.constraint(equalTo: to.rightAnchor, constant: -insets.right),
+			])
+		}
+	}
 }
 
 
@@ -138,7 +164,7 @@ import SwiftUI
 
 struct DetailViewController_Previews: PreviewProvider {
     static var previews: some View {
-		PreviewView(for: DetailViewController())
+		PreviewView(for: ContentViewController())
 			.environment(\.colorScheme, .dark)
 			.edgesIgnoringSafeArea(.all)
     }

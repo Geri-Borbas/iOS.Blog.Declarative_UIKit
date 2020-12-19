@@ -11,10 +11,6 @@ import SwiftUI
 struct PreviewView<ViewControllerType: UIViewController>: UIViewControllerRepresentable {
 	
 	let `for`: ViewControllerType
-	
-	func makeUIViewController(context: Context) -> ViewControllerType {
-		self.for
-	}
-	
+	func makeUIViewController(context: Context) -> ViewControllerType { `for` }
 	func updateUIViewController(_ viewController: ViewControllerType, context: Context) { }
 }
