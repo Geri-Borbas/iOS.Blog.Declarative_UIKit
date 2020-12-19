@@ -2,158 +2,88 @@
 //  ContentViewController.swift
 //  Declarative_UIKit
 //
-//  Created by Geri Borbás on 30/11/2020.
+//  Created by Geri Borbás on 28/11/2020.
 //  http://www.twitter.com/Geri_Borbas
 //
 
 import UIKit
 
+
 class ContentViewController: UIViewController {
-	
+
 	let viewModel = ViewModel()
 	
-	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
-		UILabel()
-			.with(text: viewModel.earth.title)
-			.withTitleStyle,
-		UIStackView().vertical(spacing: 5).withViews(
-			UIStackView().horizontal(spacing: 5).withViews(
-				UILabel()
-					.with(text: "size")
-					.withPropertyStyle  
-					.withBox,
-				UILabel()
-					.with(text: viewModel.earth.properties.size)
-					.withPropertyValueStyle,
-				UIView.spacer
-			),
-			UIStackView().horizontal(spacing: 5).withViews(
-				UILabel()
-					.with(text: "distance")
-					.withPropertyStyle
-					.withBox,
-				UILabel()
-					.with(text: viewModel.earth.properties.distance)
-					.withPropertyValueStyle,
-				UIView.spacer
-			),
-			UIStackView().horizontal(spacing: 5).withViews(
-				UILabel()
-					.with(text: "mass")
-					.withPropertyStyle
-					.withBox,
-				UILabel()
-					.with(text: viewModel.earth.properties.mass)
-					.withPropertyValueStyle,
-				UIView.spacer
-			)
-		),
-		UIImageView()
-			.with { $0.image = UIImage(named: viewModel.earth.imageAssetName) },
-		UILabel()
-			.with(text: viewModel.earth.paragraphs.first)
-			.withParagraphStyle,
-		UILabel()
-			.with(text: viewModel.earth.paragraphs.last)
-			.withParagraphStyle,
-		UIView.spacer
-	)
-	
+	private lazy var stackView = UIStackView().with {
+		$0.axis = .vertical
+		$0.spacing = 10
+		[
+			UILabel().with {
+				$0.text = viewModel.earth.title
+				$0.textColor = .label
+				$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+			},
+			UIImageView().with {
+				$0.image = UIImage(named: viewModel.earth.imageAssetName)
+			},
+			UILabel().with {
+				$0.text = """
+					size: \(viewModel.earth.properties.size)
+					distance: \(viewModel.earth.properties.distance)
+					mass: \(viewModel.earth.properties.mass)
+					"""
+				$0.textColor = .systemGray
+				$0.numberOfLines = 0
+				$0.font = UIFont.preferredFont(forTextStyle: .headline)
+			},
+			UILabel().with {
+				$0.text = viewModel.earth.paragraphs.first
+				$0.textColor = .label
+				$0.numberOfLines = 0
+				$0.font = UIFont.preferredFont(forTextStyle: .footnote)
+			},
+			UILabel().with {
+				$0.text = viewModel.earth.paragraphs.last
+				$0.textColor = .label
+				$0.numberOfLines = 0
+				$0.font = UIFont.preferredFont(forTextStyle: .footnote)
+			},
+			UIView()
+		].add(to: $0)
+	}
 	
 	// MARK: Initialization
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		view.addSubview(body)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 		view.backgroundColor = .systemBackground
-		body.pin(
-			to: view.safeAreaLayoutGuide,
-			insets: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-		)
-	}
-}
-
-
-// MARK: - Styles
-
-fileprivate extension UILabel {
-	
-	var withTitleStyle: UILabel {
-		with {
-			$0.textColor = .label
-			$0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-		}
-	}
-	
-	var withPropertyStyle: UILabel {
-		with {
-			$0.textColor = .systemBackground
-			$0.font = UIFont.preferredFont(forTextStyle: .headline)
-			$0.setContentCompressionResistancePriority(.required, for: .vertical)
-		}
-	}
-	
-	var withPropertyValueStyle: UILabel {
-		with {
-			$0.textColor = .systemGray
-			$0.font = UIFont.preferredFont(forTextStyle: .body)
-		}
-	}
-	
-	var withParagraphStyle: UILabel {
-		with {
-			$0.textColor = .label
-			$0.numberOfLines = 0
-			$0.font = UIFont.preferredFont(forTextStyle: .footnote)
-		}
-	}
-}
-
-extension UILabel {
-	
-	func with(text: String?) -> UILabel {
-		with {
-			$0.text = text
-		}
-	}
-}
-
-extension UIView {
-	
-	var withBoxStyle: UIView {
-		with {
-			$0.backgroundColor = .systemGray
-			$0.layer.cornerRadius = 5
-		}
-	}
-	
-	var withBox: UIView {
-		UIView().withBoxStyle.with {
-			$0.addSubview(self)
-			self.translatesAutoresizingMaskIntoConstraints = false
-			$0.addConstraints([
-				self.topAnchor.constraint(equalTo: $0.topAnchor, constant: 2),
-				self.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: -2),
-				self.leftAnchor.constraint(equalTo: $0.leftAnchor, constant: 5),
-				self.rightAnchor.constraint(equalTo: $0.rightAnchor, constant: -5),
-			])
-		}
-	}
-	
-	func pin(to: UILayoutGuide, insets: UIEdgeInsets)  {
-		guard let superview = superview else {
-			return
-		}
-		
-		with {
+		view.addSubview(stackView)
+		stackView.with {
 			$0.translatesAutoresizingMaskIntoConstraints = false
-			superview.addConstraints([
-				$0.topAnchor.constraint(equalTo: to.topAnchor, constant: insets.top),
-				$0.bottomAnchor.constraint(equalTo: to.bottomAnchor, constant: -insets.bottom),
-				$0.leftAnchor.constraint(equalTo: to.leftAnchor, constant: insets.left),
-				$0.rightAnchor.constraint(equalTo: to.rightAnchor, constant: -insets.right),
-			])
+			$0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+			$0.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+			$0.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 30).isActive = true
+			$0.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -30).isActive = true
 		}
+    }
+}
+
+
+fileprivate extension UIView {
+	
+	func addRedLines() {
+		layer.borderWidth = 1
+		layer.cornerRadius = 2
+		layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
+		backgroundColor = UIColor.red.withAlphaComponent(0.1)
+	}
+}
+
+
+
+fileprivate extension Array where Element: UIView {
+	
+	func add(to stackView: UIStackView) {
+		forEach { stackView.addArrangedSubview($0) }
 	}
 }
 
@@ -162,10 +92,10 @@ extension UIView {
 
 import SwiftUI
 
-struct DetailViewController_Previews: PreviewProvider {
-    static var previews: some View {
+struct WithableViewController_Previews: PreviewProvider {
+	static var previews: some View {
 		PreviewView(for: ContentViewController())
 			.environment(\.colorScheme, .dark)
 			.edgesIgnoringSafeArea(.all)
-    }
+	}
 }

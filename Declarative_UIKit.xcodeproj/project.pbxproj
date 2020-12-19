@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		553A7E4125750AC900310094 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A7E4025750AC900310094 /* PreviewView.swift */; };
-		554A94EB2574508400F2CFE6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A94EA2574508400F2CFE6 /* ContentViewController.swift */; };
+		554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */; };
 		558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC014257440CB00A7298F /* ImperativeViewController.swift */; };
 		558DC0202574463D00A7298F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC01F2574463D00A7298F /* ViewModel.swift */; };
 		558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0262574474000A7298F /* UIStackView+Extensions.swift */; };
@@ -18,14 +18,14 @@
 		55B9EB952572FBC90050C887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B9EB942572FBC90050C887 /* Assets.xcassets */; };
 		55B9EB9B2572FBC90050C887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9EB992572FBC90050C887 /* LaunchScreen.storyboard */; };
 		55B9EBA42572FC030050C887 /* NSObject+Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EBA32572FC030050C887 /* NSObject+Withable.swift */; };
-		55B9EBB0257301410050C887 /* WithableOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EBAF257301410050C887 /* WithableOnlyViewController.swift */; };
+		55B9EBB0257301410050C887 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EBAF257301410050C887 /* ContentViewController.swift */; };
 		55D5D603257485F200FC5202 /* TitleLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5D602257485F200FC5202 /* TitleLabelViewController.swift */; };
 		55D5D607257497FA00FC5202 /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5D606257497FA00FC5202 /* ExamplesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		553A7E4025750AC900310094 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		554A94EA2574508400F2CFE6 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController_2.swift; sourceTree = "<group>"; };
 		558DC014257440CB00A7298F /* ImperativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperativeViewController.swift; sourceTree = "<group>"; };
 		558DC01F2574463D00A7298F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		558DC0262574474000A7298F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -37,7 +37,7 @@
 		55B9EB9A2572FBC90050C887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B9EB9C2572FBC90050C887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B9EBA32572FC030050C887 /* NSObject+Withable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Withable.swift"; sourceTree = "<group>"; };
-		55B9EBAF257301410050C887 /* WithableOnlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithableOnlyViewController.swift; sourceTree = "<group>"; };
+		55B9EBAF257301410050C887 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		55D5D602257485F200FC5202 /* TitleLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		55D5D606257497FA00FC5202 /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,8 +78,8 @@
 				55D5D602257485F200FC5202 /* TitleLabelViewController.swift */,
 				55D5D606257497FA00FC5202 /* ExamplesViewController.swift */,
 				558DC014257440CB00A7298F /* ImperativeViewController.swift */,
-				55B9EBAF257301410050C887 /* WithableOnlyViewController.swift */,
-				554A94EA2574508400F2CFE6 /* ContentViewController.swift */,
+				55B9EBAF257301410050C887 /* ContentViewController.swift */,
+				554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,10 +190,10 @@
 				558DC0202574463D00A7298F /* ViewModel.swift in Sources */,
 				558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */,
 				55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */,
-				554A94EB2574508400F2CFE6 /* ContentViewController.swift in Sources */,
+				554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */,
 				55B9EBA42572FC030050C887 /* NSObject+Withable.swift in Sources */,
 				553A7E4125750AC900310094 /* PreviewView.swift in Sources */,
-				55B9EBB0257301410050C887 /* WithableOnlyViewController.swift in Sources */,
+				55B9EBB0257301410050C887 /* ContentViewController.swift in Sources */,
 				55B9EB912572FBC30050C887 /* SceneDelegate.swift in Sources */,
 				55D5D603257485F200FC5202 /* TitleLabelViewController.swift in Sources */,
 			);
