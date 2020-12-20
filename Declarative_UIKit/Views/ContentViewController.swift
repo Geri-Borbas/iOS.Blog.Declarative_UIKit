@@ -18,7 +18,7 @@ class ContentViewController: UIViewController {
 		$0.spacing = 10
 		[
 			UILabel().with {
-				$0.text = viewModel.titleSo
+				$0.text = viewModel.title
 				$0.textColor = .label
 				$0.font = .preferredFont(forTextStyle: .largeTitle)
 			},

@@ -9,7 +9,9 @@
 import Foundation
 
 
-protocol Withable {
+// MARK: - Withable for Objects
+
+protocol ObjectWithable: class {
 	
 	associatedtype T
 	
@@ -19,8 +21,7 @@ protocol Withable {
 	@discardableResult func with(_ closure: (_ instance: T) -> Void) -> T
 }
 
-
-extension Withable {
+extension ObjectWithable {
 	
 	@discardableResult func with(_ closure: (_ instance: Self) -> Void) -> Self {
 		closure(self)
@@ -28,5 +29,53 @@ extension Withable {
 	}
 }
 
+extension NSObject: ObjectWithable { }
 
-extension NSObject: Withable { }
+
+// MARK: - Withable for Values
+
+protocol Withable {
+	
+	associatedtype T
+	
+	/// Provides a closure to configure instances inline.
+	/// - Parameter closure: A closure with a mutable copy of `self` as the argument.
+	/// - Returns: Simply returns the mutated copy of the instance after called the `closure`.
+	@discardableResult func with(_ closure: (_ instance: inout T) -> Void) -> T
+}
+
+extension Withable {
+
+	@discardableResult func with(_ closure: (_ instance: inout Self) -> Void) -> Self {
+		var copy = self
+		closure(&copy)
+		return copy
+	}
+}
+
+
+// MARK: - Examples
+
+struct Point: Withable {
+	var x: Int = 0
+	var y: Int = 0
+}
+
+extension PersonNameComponents: Withable { }
+
+struct Test {
+	
+	let string = DateFormatter().with {
+		$0.dateStyle = .medium
+	}.string(from: Date())
+	
+	let point = Point().with {
+		$0.x = 10
+		$0.y = 10
+	}
+	
+	let name = PersonNameComponents().with {
+		$0.givenName = "Geri"
+		$0.familyName = "Borbás"
+	}
+}
