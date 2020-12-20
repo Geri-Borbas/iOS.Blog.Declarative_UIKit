@@ -1,5 +1,5 @@
 //
-//  NSObject+Withable.swift
+//  Withable.swift
 //  Declarative_UIKit
 //
 //  Created by Geri Borbás on 28/11/2020.
@@ -65,9 +65,9 @@ extension PersonNameComponents: Withable { }
 
 struct Test {
 	
-	let string = DateFormatter().with {
+	let formatter = DateFormatter().with {
 		$0.dateStyle = .medium
-	}.string(from: Date())
+	}
 	
 	let point = Point().with {
 		$0.x = 10
