@@ -11,8 +11,7 @@
 		554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */; };
 		558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC014257440CB00A7298F /* ImperativeViewController.swift */; };
 		558DC0202574463D00A7298F /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC01F2574463D00A7298F /* Planets.swift */; };
-		558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0262574474000A7298F /* UIStackView+Extensions.swift */; };
-		558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0292574475000A7298F /* UIView+Extensions.swift */; };
+		558DC0272574474000A7298F /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DC0262574474000A7298F /* UIKit+Extensions.swift */; };
 		55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EB8E2572FBC30050C887 /* AppDelegate.swift */; };
 		55B9EB912572FBC30050C887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9EB902572FBC30050C887 /* SceneDelegate.swift */; };
 		55B9EB952572FBC90050C887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B9EB942572FBC90050C887 /* Assets.xcassets */; };
@@ -28,8 +27,7 @@
 		554A94EA2574508400F2CFE6 /* ContentViewController_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController_2.swift; sourceTree = "<group>"; };
 		558DC014257440CB00A7298F /* ImperativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperativeViewController.swift; sourceTree = "<group>"; };
 		558DC01F2574463D00A7298F /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
-		558DC0262574474000A7298F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
-		558DC0292574475000A7298F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		558DC0262574474000A7298F /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		55B9EB8B2572FBC30050C887 /* Declarative_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Declarative_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B9EB8E2572FBC30050C887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B9EB902572FBC30050C887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				55B9EBA32572FC030050C887 /* Withable.swift */,
-				558DC0262574474000A7298F /* UIStackView+Extensions.swift */,
-				558DC0292574475000A7298F /* UIView+Extensions.swift */,
+				558DC0262574474000A7298F /* UIKit+Extensions.swift */,
 				553A7E4025750AC900310094 /* PreviewView.swift */,
 			);
 			path = Extensions;
@@ -186,9 +183,8 @@
 			files = (
 				558DC015257440CC00A7298F /* ImperativeViewController.swift in Sources */,
 				55D5D607257497FA00FC5202 /* ExamplesViewController.swift in Sources */,
-				558DC0272574474000A7298F /* UIStackView+Extensions.swift in Sources */,
+				558DC0272574474000A7298F /* UIKit+Extensions.swift in Sources */,
 				558DC0202574463D00A7298F /* Planets.swift in Sources */,
-				558DC02A2574475000A7298F /* UIView+Extensions.swift in Sources */,
 				55B9EB8F2572FBC30050C887 /* AppDelegate.swift in Sources */,
 				554A94EB2574508400F2CFE6 /* ContentViewController_2.swift in Sources */,
 				55B9EBA42572FC030050C887 /* Withable.swift in Sources */,

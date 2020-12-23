@@ -12,22 +12,22 @@ class ContentViewController_2: UIViewController {
 	
 	let viewModel = Planets().earth
 	
-	private lazy var body = UIStackView().vertical(spacing: 10).withViews(
+	private lazy var body = UIStackView().vertical(spacing: 10).views(
 		UILabel()
 			.with(text: viewModel.title)
 			.withTitleStyle,
-		UIStackView().vertical(spacing: 5).withViews(
-			UIStackView().horizontal(spacing: 5).withViews(
+		UIStackView().vertical(spacing: 5).views(
+			UIStackView().horizontal(spacing: 5).views(
 				UILabel()
 					.with(text: "size")
-					.withPropertyStyle  
+					.withPropertyStyle
 					.withBox,
 				UILabel()
 					.with(text: viewModel.properties.size)
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
-			UIStackView().horizontal(spacing: 5).withViews(
+			UIStackView().horizontal(spacing: 5).views(
 				UILabel()
 					.with(text: "distance")
 					.withPropertyStyle
@@ -37,7 +37,7 @@ class ContentViewController_2: UIViewController {
 					.withPropertyValueStyle,
 				UIView.spacer
 			),
-			UIStackView().horizontal(spacing: 5).withViews(
+			UIStackView().horizontal(spacing: 5).views(
 				UILabel()
 					.with(text: "mass")
 					.withPropertyStyle
@@ -49,7 +49,7 @@ class ContentViewController_2: UIViewController {
 			)
 		),
 		UIImageView()
-			.with { $0.image = UIImage(named: viewModel.imageAssetName) },
+			.with(image: UIImage(named: viewModel.imageAssetName)),
 		UILabel()
 			.with(text: viewModel.paragraphs.first)
 			.withParagraphStyle,
@@ -109,15 +109,6 @@ fileprivate extension UILabel {
 	}
 }
 
-extension UILabel {
-	
-	func with(text: String?) -> UILabel {
-		with {
-			$0.text = text
-		}
-	}
-}
-
 extension UIView {
 	
 	var withBoxStyle: UIView {
@@ -130,29 +121,10 @@ extension UIView {
 	var withBox: UIView {
 		UIView().withBoxStyle.with {
 			$0.addSubview(self)
-			self.translatesAutoresizingMaskIntoConstraints = false
-			$0.addConstraints([
-				self.topAnchor.constraint(equalTo: $0.topAnchor, constant: 2),
-				self.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: -2),
-				self.leftAnchor.constraint(equalTo: $0.leftAnchor, constant: 5),
-				self.rightAnchor.constraint(equalTo: $0.rightAnchor, constant: -5),
-			])
-		}
-	}
-	
-	func pin(to: UILayoutGuide, insets: UIEdgeInsets)  {
-		guard let superview = superview else {
-			return
-		}
-		
-		with {
-			$0.translatesAutoresizingMaskIntoConstraints = false
-			superview.addConstraints([
-				$0.topAnchor.constraint(equalTo: to.topAnchor, constant: insets.top),
-				$0.bottomAnchor.constraint(equalTo: to.bottomAnchor, constant: -insets.bottom),
-				$0.leftAnchor.constraint(equalTo: to.leftAnchor, constant: insets.left),
-				$0.rightAnchor.constraint(equalTo: to.rightAnchor, constant: -insets.right),
-			])
+			self.pin(
+				to: $0,
+				insets: UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 5)
+			)
 		}
 	}
 }
@@ -163,9 +135,9 @@ extension UIView {
 import SwiftUI
 
 struct DetailViewController_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		PreviewView(for: ContentViewController_2())
 			.environment(\.colorScheme, .dark)
 			.edgesIgnoringSafeArea(.all)
-    }
+	}
 }
